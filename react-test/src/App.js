@@ -1,8 +1,8 @@
-import styled from "styled-components";
-import { useState } from "react"; 
+import { useEffect, useState } from "react"; 
 
 export let position={x:0, y:0}
 export let speed=4;
+export let pushed=false;
 
 const keydown=(e)=>{
   console.log(e.key);
@@ -22,13 +22,19 @@ document.body.addEventListener("keydown", keydown);
 
 function App() {
   const[hoge,setHoge]=useState([position.x, position.y]);
-  console.log("hoge:"+hoge);
+
+  useEffect(()=>{
+    const interval = setInterval(()=>{
+      setHoge([position.x, position.y]);
+    },50);
+    return ()=>clearInterval(interval);
+  }, []);
 
   return (
     <div>
-      <p>Hello, world!</p>
+      <p onClick={()=>{alert("hello")}}>Hello, world!</p>
       <button>BUTTON</button>
-      <input onKeyDown={(e)=>{console.log(position);setHoge([position.x, position.y]);}} />
+      <input onKeyDown={(e)=>{}} />
       <div id="cursor" style={{position:"absolute",top:position.y,left:position.x}}>|</div>
     </div>
   );
