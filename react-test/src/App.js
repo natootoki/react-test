@@ -3,7 +3,8 @@ import logo from './logo.svg';
 function App() {
   return (
     <div>
-      Hello, world!
+      <p>Hello, world!</p>
+      <button>BUTTON</button>
     </div>
   );
 }
