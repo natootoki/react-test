@@ -58,9 +58,7 @@ function App() {
 
   return (
     <div>
-      <p onClick={()=>{alert("hello")}}>Hello, world!</p>
-      <button>BUTTON</button>
-      <input onKeyDown={(e)=>{}} />
+      <p>WhiteBoard with React</p>
       <div id="cursor" style={{position:"absolute",top:position.y,left:position.x}}>|</div>
     </div>
   );
