@@ -60,7 +60,7 @@ function App() {
   return (
     <div>
       <p>WhiteBoard with React</p>
-      <div id="cursor" style={{position:"absolute",top:position.y,left:position.x}}>|</div>
+      <input id="cursor" style={{position:"absolute",top:position.y,left:position.x}}></input>
     </div>
   );
 }
