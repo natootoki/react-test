@@ -52,7 +52,7 @@ function App() {
         position.y+=speed;
       }
       setHoge([position.x, position.y]);
-    },50);
+    },1000/60.0);
     return ()=>clearInterval(interval);
   }, []);
 
