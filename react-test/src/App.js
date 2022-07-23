@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react"; 
 
-export let position={x:0, y:0}
-export let speed=4;
-export let pushed={right:false, left:false, up:false, down:false};
+let position={x:0, y:0}
+let speed=1;
+let pushed={right:false, left:false, up:false, down:false};
 
 const keydown=(e)=>{
-  console.log(e.key);
+  //console.log(e.key);
   if(e.key==="ArrowRight"){
     pushed.right=true;
   }else if(e.key==="ArrowLeft"){
@@ -19,7 +19,7 @@ const keydown=(e)=>{
 }
 
 const keyup=(e)=>{
-  console.log(e.key);
+  //console.log(e.key);
   if(e.key==="ArrowRight"){
     pushed.right=false;
   }else if(e.key==="ArrowLeft"){
@@ -39,6 +39,7 @@ function App() {
 
   useEffect(()=>{
     const interval = setInterval(()=>{
+      //console.log(window.requestAnimationFrame);
       if(pushed.right){
         position.x+=speed;
       }
@@ -52,7 +53,7 @@ function App() {
         position.y+=speed;
       }
       setHoge([position.x, position.y]);
-    },1000/60.0);
+    },window.requestAnimationFrame);
     return ()=>clearInterval(interval);
   }, []);
 
